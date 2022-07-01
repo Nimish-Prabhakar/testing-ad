@@ -10,7 +10,7 @@ dotenv.config();
 
 const MongoClient = mongodb.MongoClient;
 
-const port = process.env.PORT || 8090;
+const port = process.env.PORT || 3001;
 
 MongoClient.connect(process.env.DB_URI, {
   useNewUrlParser: true,
