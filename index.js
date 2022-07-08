@@ -10,7 +10,7 @@ dotenv.config();
 
 const MongoClient = mongodb.MongoClient;
 
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 MongoClient.connect(process.env.DB_URI, {
   useNewUrlParser: true,
@@ -25,7 +25,7 @@ MongoClient.connect(process.env.DB_URI, {
     await ipsDAO.injectDB(client);
     await womenDAO.injectDB(client);
     await dealDAO.injectDB(client);
-    app.listen(port, () => {
-      console.log(`listening on port ${port}`);
+    app.listen(PORT, () => {
+      console.log(`listening on port ${PORT}`);
     });
   });

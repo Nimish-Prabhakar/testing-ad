@@ -42,6 +42,18 @@ class ipsController {
       console.log(err);
     }
   }
+
+  static async getHeaders(req, res, next) {
+    var host = req.get('host');
+    var origin = req.get('origin');
+    console.log('host', host);
+    console.log('origin', origin);
+    if (origin === undefined) {
+      res.send('hello there');
+    } else {
+      res.send('hello there', origin);
+    }
+  }
 }
 
 module.exports = ipsController;
